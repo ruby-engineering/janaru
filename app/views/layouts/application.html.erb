@@ -13,11 +13,11 @@
 
   <body>
     <%= render "partials/navbar" %>
+    <% if user_signed_in? && current_user.admin? %>
+      <%= render "partials/admin_navbar" %>
+    <% end %>
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 antialiased">
-      
-      <div class="mx-auto max-w-6xl">
-        <%= yield %>
-      </div>
+      <%= yield %>
     </div>
   </body>
 </html>
